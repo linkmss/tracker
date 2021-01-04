@@ -1,0 +1,310 @@
+.q-catalog 
+    &__title 
+        font-size: 40px
+        line-height: 48px
+        font-family: $HelveticaNeueCyrBold
+        margin-bottom: 25px
+    &__filter
+        position: relative
+        display: flex
+        padding: 25px 25px 30px 25px
+        background: linear-gradient(270deg, #176AB2 0%, #7F54A0 100%)
+        mix-blend-mode: normal
+        border-radius: 0px 35px
+        margin-bottom: 60px
+        &-text 
+            font-family: $HelveticaNeueCyrBold
+            font-size: 16px
+            line-height: 22px
+            color: $white
+        &-block 
+            width: calc(100% - 225px)
+
+            @media #{$breakpoint-md-only} 
+                width: 100%
+                padding-bottom: 95px
+            @media #{$breakpoint-xs-only} 
+                width: 100%
+                padding-bottom: 95px
+                &__button 
+                    color: $white
+                    background: transparent
+                    border: none
+                    display: inline-block
+                    vertical-align: middle
+                    cursor: pointer
+                    transition: all .2s
+                    &:hover
+                        opacity: .5
+                    &::before 
+                        content: ''
+                        display: inline-block
+                        vertical-align: middle
+                        width: 24px
+                        height: 24px
+                        margin-right: 10px
+                        background-position: center center
+                        background-repeat: no-repeat
+                        background-size: contain
+                        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTQuNTUzNCA5Ljk0MjQ1TDIwLjY4NzkgMy4zMzYwOUMyMC44MDY3IDMuMjA4MTIgMjAuNzE2IDMgMjAuNTQxNCAzSDMuNDU4NjRDMy4yODQwMSAzIDMuMTkzMjUgMy4yMDgxMiAzLjMxMjA4IDMuMzM2MDlMOS40NDY1NiA5Ljk0MjQ1QzkuNDgwOTEgOS45Nzk0NCA5LjUgMTAuMDI4MSA5LjUgMTAuMDc4NVYxNy44ODY4QzkuNSAxNy45NTcgOS41MzY4NiAxOC4wMjIxIDkuNTk3MSAxOC4wNTgzTDE0LjE5NzEgMjAuODE4M0MxNC4zMzA0IDIwLjg5ODIgMTQuNSAyMC44MDIyIDE0LjUgMjAuNjQ2OFYxMC4wNzg1QzE0LjUgMTAuMDI4MSAxNC41MTkxIDkuOTc5NDQgMTQuNTUzNCA5Ljk0MjQ1WiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48L3N2Zz4=);
+                &__content
+                    // display: none
+                    @media #{$breakpoint-xs-only} 
+                        margin-top: 15px
+                        border-top: 1px solid transparentize($white, .8)
+                        padding-top: 20px
+                        &.active
+                            display: block
+        &-button 
+            position: absolute
+            top: 0
+            bottom: 0
+            right: 0
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 200px
+            padding: 0 25px
+            background: linear-gradient(270deg, #7C4394 0%, #DB2431 100%)
+            mix-blend-mode: normal
+            border-radius: 0px 35px
+            @media #{$breakpoint-md-only} 
+                bottom: 0
+                top: auto
+                width: 100%
+                height: 90px
+            @media #{$breakpoint-xs-only} 
+                bottom: 0
+                top: auto
+                width: 100%
+                height: 90px
+            
+    &__block
+        position: relative
+        margin-bottom: 30px
+        & .row 
+            width: 100%
+            display: inline-block
+            column-count: 3
+            @media #{$breakpoint-md-only} 
+                column-count: 2
+            @media #{$breakpoint-xs-only} 
+                column-count: 1
+            
+            & .col-4 
+                display: inline-block
+                width: 100%
+                max-width: 100%
+        &-prompt 
+            margin-right: 20px
+            display: flex
+            align-items: center
+            font-size: 14px
+            line-height: 20px
+            color: #8C8C8C
+            & span
+                &:nth-child(1)
+                    display: block
+                    width: 8px
+                    height: 8px
+                    margin-right: 6px
+                    border-radius: 50%
+            & .course
+                background: linear-gradient(270deg, #7C4394 0%, #DB2431 100%)
+            & .material
+                background: linear-gradient(270deg, #165B9C 0%, #55BB9A 100%)
+            & .test
+                background: linear-gradient(270deg, #1D577C 0%, #FCD499 100%)
+            & .event
+                background: linear-gradient(270deg, #A6CF66 0%, #56A947 100%)
+            & .program
+                background: linear-gradient(270deg, #7F54A0 0%, #176AB2 100%)
+            &:last-child
+                margin-right: 0
+        &-item 
+            position: relative
+            display: flex
+            flex-direction: column
+            z-index: 10
+            background: #EBF1F6
+            border-radius: 35px 0px 0px 0px
+            padding: 20px
+            min-height: 240px
+            &:hover *
+                color: #366EA5 !important
+            @media #{$breakpoint-xs-only} 
+                min-height: auto
+                padding-bottom: 40px
+            & + .q-catalog__block-state 
+                &::after
+                    content: ''
+                    position: absolute
+                    z-index: -2
+                    top: 0
+                    bottom: 0
+                    right: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                &::before
+                    content: ''
+                    position: absolute
+                    z-index: -1
+                    top: 0
+                    bottom: 0
+                    right: 0
+                    left: 0
+                    margin: auto
+                    width: calc(100% - 4px)
+                    height: calc(100% - 4px)
+                    background: $white
+                    border-radius: 0px 0px 34px 0px
+            &.course
+                & + .q-catalog__block-state 
+                    &::after
+                        background: linear-gradient(270deg, #7C4394 0%, #DB2431 100%)
+            &.material
+                & + .q-catalog__block-state 
+                    &::after
+                        background: linear-gradient(270deg, #165B9C 0%, #55BB9A 100%)
+            &.test
+                & + .q-catalog__block-state 
+                    &::after
+                        background: linear-gradient(270deg, #1D577C 0%, #FCD499 100%)
+            &.event
+                & + .q-catalog__block-state 
+                    &::after
+                        background: linear-gradient(270deg, #A6CF66 0%, #56A947 100%)
+            &.program
+                & + .q-catalog__block-state 
+                    &::after
+                        background: linear-gradient(270deg, #7F54A0 0%, #176AB2 100%)
+        &-title 
+            font-size: 20px
+            line-height: 30px
+            font-family: $HelveticaNeueCyrBold
+            margin-top: 5px
+            color: $black
+        &-date
+            font-size: 14px
+            line-height: 20px
+            color: #8C8C8C
+            margin-top: 10px
+            @media #{$breakpoint-xs-only} 
+                margin-top: 15px
+        &-program
+            font-size: 14px
+            line-height: 20px
+            color: #366EA5
+            margin-top: auto
+            @media #{$breakpoint-xs-only} 
+                margin-top: 15px
+        &-state
+            position: relative
+            display: flex
+            align-items: center
+            top: -2px
+            padding: 8px 20px 13px 20px
+            z-index: 1
+            background: $white
+            width: calc(100% - 40px)
+            margin: auto
+            border-radius: 0px 0px 35px 0px
+            overflow: hidden
+            font-weight: bold
+            font-size: 14px
+            line-height: 20px
+            &__text
+                display: flex
+                align-items: center
+
+            &__button 
+                display: flex
+                align-items: center
+                text-decoration: none
+                color: $black
+                transition: all .2s
+                &:hover
+                    &::after
+                        margin-left: 8px
+                &::after
+                    content: ''
+                    display: block
+                    margin-left: 6px
+                    width: 10px
+                    height: 10px
+                    background-position: center center
+                    background-repeat: no-repeat
+                    background-size: contain
+                    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMCA2SDEwTTEwIDZMNSAxTTEwIDZMNSAxMSIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48L3N2Zz4=);
+
+            &.appointed 
+                & .q-catalog__block-state__text 
+                    padding-right: 10px
+                    margin-right: 10px
+                    font-weight: normal
+                    &::after
+                        content: ''
+                        position: relative
+                        right: -10px
+                        display: block
+                        width: 2px
+                        height: 20px
+                        background: transparentize($black, .90)
+            &.blocked
+                & .q-catalog__block-state__text 
+                    &::before
+                        content: ''
+                        display: block
+                        margin-right: 5px
+                        width: 24px
+                        height: 24px
+                        background-position: center center
+                        background-repeat: no-repeat
+                        background-size: contain
+                        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMkMxNC4yMDkxIDIgMTYgMy43OTA4NiAxNiA2VjhIMTcuNzVDMTguOTkyNiA4IDIwIDkuMDA3MzYgMjAgMTAuMjVWMTkuNzVDMjAgMjAuOTkyNiAxOC45OTI2IDIyIDE3Ljc1IDIySDYuMjVDNS4wMDczNiAyMiA0IDIwLjk5MjYgNCAxOS43NVYxMC4yNUM0IDkuMDA3MzYgNS4wMDczNiA4IDYuMjUgOEg4VjZDOCAzLjc5MDg2IDkuNzkwODYgMiAxMiAyWk0xNy43NSA5LjVINi4yNUM1LjgzNTc5IDkuNSA1LjUgOS44MzU3OSA1LjUgMTAuMjVWMTkuNzVDNS41IDIwLjE2NDIgNS44MzU3OSAyMC41IDYuMjUgMjAuNUgxNy43NUMxOC4xNjQyIDIwLjUgMTguNSAyMC4xNjQyIDE4LjUgMTkuNzVWMTAuMjVDMTguNSA5LjgzNTc5IDE4LjE2NDIgOS41IDE3Ljc1IDkuNVpNMTIuMDAwMSAxMy41QzEyLjgyODYgMTMuNSAxMy41MDAxIDE0LjE3MTYgMTMuNTAwMSAxNUMxMy41MDAxIDE1LjgyODQgMTIuODI4NiAxNi41IDEyLjAwMDEgMTYuNUMxMS4xNzE3IDE2LjUgMTAuNTAwMSAxNS44Mjg0IDEwLjUwMDEgMTVDMTAuNTAwMSAxNC4xNzE2IDExLjE3MTcgMTMuNSAxMi4wMDAxIDEzLjVaTTEyIDMuNUMxMC42MTkzIDMuNSA5LjUgNC42MTkyOSA5LjUgNlY4SDE0LjVWNkMxNC41IDQuNjE5MjkgMTMuMzgwNyAzLjUgMTIgMy41WiIgZmlsbD0iYmxhY2siLz48L3N2Zz4=);
+
+        &-image
+            border-radius: 35px 0px 0px 0px
+            width: 100%
+            min-height: 313px
+            background-position: center center
+            background-size: cover
+            background-repeat: no-repeat
+            @media #{$breakpoint-xs-only} 
+                min-height: 253px
+            & ~ .q-catalog__block-item 
+                border-radius: 0
+    &__paginator
+        display: flex
+        justify-content: start
+        &-page
+            position: relative
+            width: 40px
+            height: 40px
+            font-size: 16px
+            line-height: 40px
+            text-align: center
+            font-weight: 700
+            font-family: $HelveticaNeueCyrBold
+            color: rgba(54, 110, 165, 1)
+            &.active 
+                background: linear-gradient(270deg, #7F54A0 0%, #176AB2 100%)
+                border-radius: 15px 0px;
+                color: rgba(255, 255, 255, 1)
+            &.dotted
+                line-height: 30px
+            &.next
+                font-weight: 400
+                font-family: $HelveticaNeueCyrMedium
+                &::after
+                    content: ''
+                    position: absolute
+                    right: -68px
+                    top: 16px
+                    border: 2px solid #366EA5
+                    border-width: 0 2px 2px 0
+                    padding: 3px
+                    transform: rotate(-45deg)
+                    display: inline-block
+

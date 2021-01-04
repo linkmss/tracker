@@ -1,0 +1,68 @@
+.q-icon
+    display: inline-block
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center center
+    &.logo
+        @include inline($logo)
+    &.logout
+        @include inline($logout)
+    &.black-logo
+        @include inline($black-logo)
+    &.menu
+        @include inline($menu)
+    &.picture
+        @include inline($picture)
+    &.info
+        @include inline($info)
+    &.calendar
+        @include inline($calendar)
+    &.fire
+        @include inline($fire)
+    &.load
+        @include inline($load-photo)
+    &.footer-logo
+        @include inline($footer-logo)
+        margin-right: 20px
+    &.labmedia
+        @include inline($labmedia)
+    &.search
+        @include inline($search)
+        position: absolute
+        left: 15px
+        width: 24px
+        height: 24px
+        top: 20px
+        @media #{$breakpoint-xs-only}
+            top: 12px
+    &.search-white
+        @include inline($search-white)
+        position: absolute
+        left: 15px
+        width: 24px
+        height: 24px
+        top: 20px
+        @media #{$breakpoint-xs-only}
+            top: 12px
+    &.left-arrow
+        @include inline($left-arrow)
+        position: absolute
+        top: 3px
+        left: -23px
+    &.cross
+        @include inline($cross)
+        position: absolute
+        top: 12px
+        right: 12px
+        cursor: pointer
+    &.q-control__title-button-excel-icon
+        @include inline($excel)
+        margin-right: 10px
+    &.comand-modal__close
+        position: absolute
+        @include inline($open-close)
+        top: -52px
+        left: 50%
+        margin-left: -13px
+        cursor: pointer
+        

@@ -1,0 +1,213 @@
+.q-lang-selector
+  position: relative
+  // z-index: 100000
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+  &.active
+    & .q-lang-selector__arrow
+      transform: rotate(180deg)
+    & .q-lang-selector__content
+      display: block
+      z-index: 1
+  &__title
+    font-size: 14px;
+    line-height: 20px;
+    color: $white
+    position: relative
+    &.black
+      color: $black
+    &-wrapper
+      display: flex
+      align-items: center
+  &__arrow
+    @include inline($arrow)
+    margin-left: 10px
+    &.black
+      @include inline($black-arrow)
+  &__content
+    display: none
+    position: absolute
+    top: 24px
+    right: 0
+    background: $white
+    min-width: 97px
+    box-shadow: 0 2px 10px rgba(54, 110, 165, 0.2)
+  &__item
+    transition: all .3s
+    &:hover
+      background: $c4
+    & input
+      clip: rect(0, 0, 0, 0)
+      position: absolute
+      top: 0
+      left: 0
+      &:checked
+        & + label
+          color: $black
+          &:before
+            display: block
+    & label
+      position: relative
+      width: 100%
+      display: block
+      padding: 15px 35px 15px 55px
+      font-size: 16px
+      line-height: 24px
+      color: $blue
+      cursor: pointer
+
+      &:before
+        content: ''
+        @include inline($tick)
+        display: none
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 25px
+        margin: auto 0
+
+.q-selector_type
+  position: relative
+  cursor: pointer
+  &-wrapper
+    width: calc(100% - 39px)
+  &__value
+    display: none
+    text-overflow: ellipsis
+    overflow: hidden
+    white-space: nowrap
+  @media #{$breakpoint-xs-only}
+    margin-bottom: 20px
+  &.active
+    & .q-selector_type__arrow
+      transform: rotate(180deg)
+    & .q-selector_type__content
+      display: block
+      z-index: 1
+  &__title
+    font-size: 16px
+    line-height: 24px
+    color: $black
+    position: relative
+    &-wrapper
+      display: flex
+      align-items: center
+      justify-content: space-between
+      width: 100%
+      height: 100%
+      background: $white
+      padding: 20px 15px
+      &.selected
+        padding: 8px 8px 11px 15px
+        & .q-selector_type__value
+          display: block
+          white-space: nowrap
+        & .q-selector_type__title
+          font-size: 12px
+          line-height: 18px
+          margin-bottom: 5px
+
+      &:hover
+        background: transparentize($white, .25)
+      @media #{$breakpoint-xs-only}
+        padding: 12px 15px
+  &__arrow
+    @include inline($blue-arrow)
+    margin-left: 10px
+  &__content
+    display: none
+    position: absolute
+    top: 64px
+    width: 100%
+    right: 0
+    box-shadow: 0 2px 10px rgba(54, 110, 165, 0.2)
+    background: $white
+    @media #{$breakpoint-xs-only}
+      top: 65px
+  &__item
+    transition: all .3s
+    &:hover
+      background: $c4
+    & input
+      clip: rect(0, 0, 0, 0)
+      position: absolute
+      top: 0
+      left: 0
+      &:checked
+        & + label
+          color: $black
+          &:before
+            display: block
+    & label
+      position: relative
+      width: 100%
+      display: block
+      padding: 15px 35px 15px 55px
+      font-size: 16px
+      line-height: 24px
+      color: $blue
+      cursor: pointer
+
+      &:before
+        content: ''
+        @include inline($tick)
+        display: none
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 25px
+        margin: auto 0
+
+.q-switcher
+  position: absolute
+  display: inline-block
+  cursor: pointer
+  vertical-align: middle
+  outline: none
+  user-select: none
+  width: 42px
+  height: 24px
+  border-radius: 30px
+  overflow: hidden
+  font-size: 0
+  text-indent: 100%
+  white-space: nowrap
+  background-color: transparentize($blue, .85)
+  &.active
+    background: linear-gradient(270deg, #7F54A0 0%, #176AB2 100%)
+    &:before
+      background: #ffffff
+      margin: 3px 3px 3px 21px
+  &:before
+    content: ""
+    background: $blue
+    height: 18px
+    width: 18px
+    border-radius: 50%
+    margin: 3px 21px 3px 3px
+    display: block
+    transition: margin .3s
+  &__block
+    display: block
+    margin-right: 45px
+    &-item
+      position: relative
+      display: inline-block
+      vertical-align: middle
+      cursor: pointer
+      &:hover
+        & .q-switcher__text
+          color: transparentize($blue, .2)
+        & .q-switcher
+          background: transparentize($blue, .75)
+      & .q-switcher.active
+        background: linear-gradient(270deg, #7F54A0 0%, #176AB2 100%)
+  &__text
+    display: inline-block
+    vertical-align: middle
+    font-size: 16px
+    line-height: 22px
+    color: $blue
+    padding-right: 10px

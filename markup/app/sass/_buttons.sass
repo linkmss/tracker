@@ -1,0 +1,57 @@
+.q-button
+  display: inline-block
+  outline: none
+  background: transparent
+  &.contour
+    padding: 13px 35px
+    font-size: 20px
+    line-height: 30px
+    color: $white
+    border: 2px solid $white
+    border-radius: 30px
+    text-align: center
+    transition: all .3s
+    &.disabled
+      opacity: 0.5
+      pointer-events: none
+    &:hover
+      background: $white
+      color: $blue
+
+.gradient-box
+  font-family: $HelveticaNeueCyrBold
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+  position: relative
+  padding: 5px 10px
+  box-sizing: border-box
+  color: $blue
+  background: $white
+  background-clip: padding-box
+  border: solid 2px transparent
+  border-radius: 30px
+  transition: all .3s
+  cursor: pointer
+  &.height
+    height: 100%
+  &.disabled
+    background-color: #EBF1F6
+    pointer-events: none
+    color: transparentize($blue, .5)
+    &:before
+      opacity: 0.5
+  &:hover
+    background: linear-gradient(270deg, #7F54A0 0%, #176AB2 100%)
+    color: $white
+  &:before
+    content: ""
+    position: absolute
+    top: -2px
+    bottom: -2px
+    left: -2px
+    right: -2px
+    border-radius: 34px
+    z-index: -1
+    background: linear-gradient(270deg, #7F54A0 0%, #176AB2 100%)

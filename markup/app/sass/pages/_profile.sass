@@ -1,0 +1,577 @@
+.q-profile
+  min-height: calc(100vh - 77px)
+  position: relative
+  &-content
+    position: relative
+  &-bg
+    position: relative
+    &:before
+      content: ''
+      position: fixed
+      z-index: -1
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      width: 100%
+      height: 586px
+      background: linear-gradient(180deg, #EFF8FF 0%, rgba(255, 255, 255, 0) 100%)
+  &-load
+    width: 0.1px
+    height: 0.1px
+    opacity: 0
+    overflow: hidden
+    position: absolute
+    z-index: -1
+    &_photo
+      @media #{$breakpoint-lg-only}
+        min-width: 166px
+      @media #{$breakpoint-md-only}
+        min-width: 158px
+      @media #{$breakpoint-xs-only}
+        min-width: 106px
+    &-label
+      text-align: center
+      display: inline-block
+      outline: none
+      width: 48px
+      height: 48px
+      border: none
+      padding: 12px
+      text-decoration: none
+      cursor: pointer
+      background: $white
+      border-radius: 50px 0 50px 50px
+  &-no-photo
+    display: inline-block
+    border-radius: 0 70px
+    border: 2px dashed rgba(54, 110, 165, 0.8)
+    padding: 20px
+    font-size: 14px
+    color: $blue
+    line-height: 20px
+    cursor: pointer
+    @media #{$breakpoint-lg-only}
+      height: 100%
+      width: 166px
+    @media #{$breakpoint-md-only}
+      height: 166px
+      width: 158px
+    @media #{$breakpoint-xs-only}
+      width: 105px
+      height: 106px
+      border-radius: 0 40px
+      padding-top: 5px
+      padding-left: 15px
+  &-photo
+    background-image: url("../images/man.png")
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    border-radius: 0 70px
+    @media #{$breakpoint-lg-only}
+      height: 166px
+      width: 166px
+    @media #{$breakpoint-md-only}
+      height: 166px
+
+      width: 158px
+    @media #{$breakpoint-xs-only}
+      width: 105px
+      height: 106px
+      border-radius: 0 40px
+  &-info
+    background: $white
+    width: 100%
+    position: relative
+    border-radius: 0 0 70px 0
+    overflow: hidden
+    padding: 20px
+    min-height: 166px
+    @media #{$breakpoint-xs-only}
+      border-radius: 0 0 35px 0
+      padding: 22px 15px 30px 15px
+      overflow: visible
+
+    &__name
+      font-family: $HelveticaNeueCyrBold
+      font-size: 16px
+      line-height: 22px
+      color: $gray-9
+      margin-bottom: 22px
+      @media #{$breakpoint-xs-only}
+        margin-bottom: 10px
+    &__work
+      font-size: 14px
+      line-height: 20px
+      color: $gray-2
+
+    &__level
+      font-size: 14px
+      line-height: 20px
+      margin-bottom: 3px
+      @media #{$breakpoint-xs-only}
+        margin-bottom: 0
+      &-title
+        font-size: 14px
+        line-height: 20px
+        color: $gray-2
+      &-num
+        font-family: $HelveticaNeueCyrBold
+        font-size: 280px
+        line-height: 120px
+        color: $white
+        margin-right: 20px
+        text-shadow: -2px -2px 0 $blue, 2px -2px 0 $blue, -2px 2px 0 $blue, 2px 2px 0 $blue
+        @media #{$breakpoint-md-only}
+          font-size: 105px
+          line-height: 80px
+        @media #{$breakpoint-xs-only}
+          font-size: 105px
+          line-height: 80px
+          margin-right: 5px
+    &__full-information
+      width: 238px
+      background: transparentize($black, .05)
+      padding: 20px 62px 20px 20px
+      position: absolute
+      top: -20px
+      right: -20px
+      color: $white
+      font-size: 14px
+      line-height: 20px
+      border-radius: 35px 0
+      @media #{$breakpoint-xs-only}
+        width: calc(100% + 135px)
+        top: 0
+        right: -15px
+
+    &__information
+      position: absolute
+      top: -20px
+      right: -20px
+      text-align: center
+      display: inline-block
+      outline: none
+      width: 48px
+      height: 48px
+      border: none
+      padding: 12px
+      text-decoration: none
+      cursor: pointer
+      background: transparentize($blue, .9)
+      border-radius: 50px 0 50px 50px
+      @media #{$breakpoint-xs-only}
+        top: 0
+        right: -15px
+
+  &-active-task
+    padding: 48px 35px
+    background: linear-gradient(270deg, #7C4394 0%, #DB2431 100%)
+    border-radius: 70px 0
+    width: 259px
+    min-width: 259px
+    @media #{$breakpoint-md-only}
+      width: 206px
+      min-width: 206px
+      padding: 40px 25px 29px
+    @media #{$breakpoint-xs-only}
+      border-radius: 35px 0
+      width: 100%
+      display: flex
+      justify-content: space-between
+      padding: 16px 15px 10px
+      align-items: flex-end
+    &__title
+      color: $white
+      font-size: 16px
+      line-height: 22px
+      font-family: $HelveticaNeueCyrBold
+      padding-bottom: 17px
+      @media #{$breakpoint-md-only}
+        font-size: 14px
+        line-height: 20px
+        padding-bottom: 29px
+      @media #{$breakpoint-xs-only}
+        padding-bottom: 0
+    &__num
+      font-size: 100px
+      line-height: 108px
+      font-family: $HelveticaNeueCyrBold
+      color: $white
+      @supports (-webkit-text-stroke: 2px $white)
+        color: transparent
+        -webkit-text-stroke: 2px $white
+      @media #{$breakpoint-xs-only}
+        font-size: 80px
+        line-height: 68px
+
+
+  &-work-info
+    width: 100%
+
+  &-main-info
+    width: 100%
+    background: linear-gradient(270deg, #165B9C 0%, #52C9C2 100%)
+    border-radius: 70px 0
+    @media #{$breakpoint-xs-only}
+      border-radius: 35px 0
+      flex-direction: column
+
+  &-letter
+    &_q
+      position: absolute
+      @include inline($Q-profile)
+      top: 0
+      left: 235px
+      @media #{$breakpoint-md-only}
+        left: -240px
+      @media #{$breakpoint-xs-only}
+        left: -280px
+
+    &_o
+      position: absolute
+      @include inline($O-profile)
+      top: 0
+      right: 0
+      @media #{$breakpoint-md-only}
+        top: 120px
+      @media #{$breakpoint-xs-only}
+        top: 110px
+    &_s
+      position: absolute
+      @include inline($S-profile)
+      bottom: 0
+      left: 0
+      @media #{$breakpoint-xs-only}
+        display: none
+    &_y
+      position: absolute
+      @include inline($Y-profile)
+      bottom: 0
+      right: 0
+      @media #{$breakpoint-xs-only}
+        display: none
+
+.work-info
+  color: $white
+  padding: 48px 45px 57px 20px
+  @media #{$breakpoint-md-only}
+    padding: 40px 22px 40px 20px
+  @media #{$breakpoint-xs-only}
+    display: none
+  &-mini
+    display: none
+    @media #{$breakpoint-xs-only}
+      display: block
+      padding: 30px 15px
+
+      &__titles
+        font-size: 14px
+        line-height: 20px
+        font-family: $HelveticaNeueCyrBold
+        color: transparentize($white, .4)
+        justify-content: space-between
+        border-bottom: 2px solid transparentize($white, .6)
+        cursor: pointer
+      &__title
+        padding-bottom: 10px
+        &.active
+          color: $white
+          cursor: pointer
+          position: relative
+          &:before
+            content: ''
+            position: absolute
+            width: 100%
+            height: 2px
+            bottom: -2px
+            right: 0
+            left: 0
+            background-color: $white
+            transition: all .3s
+
+  &__title
+    font-family: $HelveticaNeueCyrBold
+    font-size: 16px
+    line-height: 22px
+    margin-bottom: 8px
+    @media #{$breakpoint-md-only}
+      font-size: 14px
+      line-height: 20px
+  &__active
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    padding-bottom: 5px
+    border-bottom: 2px solid $gray-1
+    margin-bottom: 10px
+    @media #{$breakpoint-md-only}
+      flex-direction: column-reverse
+      align-items: start
+    &-title
+      font-size: 16px
+      line-height: 24px
+      @media #{$breakpoint-md-only}
+        font-size: 12px
+        line-height: 18px
+    &-num
+      font-family: $HelveticaNeueCyrBold
+      font-size: 40px
+      line-height: 48px
+  &__fin
+    &-title
+      color: $gray-1
+      font-size: 14px
+      line-height: 20px
+      margin-bottom: 3px
+      @media #{$breakpoint-md-only}
+        font-size: 12px
+        line-height: 18px
+    &-about
+      display: flex
+      justify-content: space-between
+      align-items: flex-end
+      &-title, &-num
+        font-size: 16px
+        line-height: 24px
+        @media #{$breakpoint-md-only}
+          font-size: 14px
+          line-height: 20px
+        @media #{$breakpoint-xs-only}
+          font-size: 14px
+          line-height: 20px
+      &-num
+        display: flex
+        justify-content: flex-end
+      @media #{$breakpoint-md-only}
+        flex-direction: row-reverse
+        &-num
+          display: flex
+          justify-content: flex-start
+
+      @media #{$breakpoint-xs-only}
+        flex-direction: row-reverse
+        &-num
+          display: flex
+          justify-content: flex-start
+
+
+.mini-info
+  margin-top: 20px
+  color: $white
+  &__num
+    font-family: $HelveticaNeueCyrBold
+    font-size: 40px
+    line-height: 48px
+  &__title
+    font-size: 14px
+    line-height: 20px
+
+
+.q-filters
+  background-color: #EBF1F6
+  z-index: 1
+  border-radius: 0 70px 70px 0
+  position: relative
+  & .gradient-box
+    background: #EBF1F6
+    background-clip: padding-box
+    &:hover
+      background: linear-gradient(270deg, #7F54A0 0%, #176AB2 100%)
+      background-clip: padding-box
+      color: $white
+  &__clear-all
+    color: $blue
+    font-size: 12px
+    line-height: 18px
+    display: inline-block
+  &__item
+    background: rgba(54, 110, 165, 0.1)
+    padding: 4px 29px 2px 10px
+    position: relative
+    display: inline-block
+    &_title
+      margin-right: 10px
+      font-size: 12px
+      line-height: 18px
+      color: transparentize($black, .25)
+    &_cross
+      position: absolute
+      @include inline($blue-cross)
+      top: 8px
+      right: 15px
+      cursor: pointer
+    @media #{$breakpoint-xs-only}
+      margin-bottom: 7px
+
+
+  @media #{$breakpoint-xs-only}
+    border-radius: 0 0 34px 34px
+
+.fc-button
+  font-family: $HelveticaNeueCyrBold !important
+  font-size: 16px !important
+  color: #366ea5 !important
+  line-height: 22px !important
+  display: inline-block !important
+  cursor: pointer !important
+  transition: all .5s !important
+  border: none !important
+  background-color: transparent !important
+  outline: none !important
+  box-shadow: none !important
+  @media #{$breakpoint-xs-only}
+    flex-basis: 50%
+    margin: 0
+  &.fc-button-active
+    color: $black !important
+    position: relative !important
+    &:before
+      content: ''
+      position: absolute
+      width: 100%
+      height: 2px
+      top: -6px
+      right: 0
+      left: 0
+      background-color: $black
+
+.fc-button-group
+  display: inline-block !important
+  border-top: 2px solid #d7e2ed !important
+  padding-top: 4px !important
+  @media #{$breakpoint-xs-only}
+    display: flex !important
+    justify-content: space-between !important
+    margin-bottom: 25px !important
+
+.paddings
+  padding: 20px
+  @media #{$breakpoint-xs-only}
+    padding: 15px
+
+
+.fc-prev-button
+  height: 40px !important
+  width: 40px !important
+  margin-right: 25px !important
+  padding: 11px 16px 11px 15px !important
+  transition: .3ms !important
+  border-radius: 20px 20px 0 20px !important
+  border: none !important
+  background-color: transparent !important
+  & .fc-icon-chevron-left
+    @include inline($left-blue-arrow)
+    &:before
+      display: none !important
+  &:hover
+    background: linear-gradient(270deg, #7F54A0 0%, #176AB2 100%) !important
+    & .fc-icon-chevron-left
+      @include inline($left-blue-arrow-h)
+
+.fc-next-button
+  height: 40px !important
+  width: 40px !important
+  margin-left: 25px !important
+  padding: 11px 15px 11px 16px !important
+  transition: all .3ms !important
+  border-radius: 20px 20px 20px 0 !important
+  & .fc-icon-chevron-right
+    @include inline($right-blue-arrow)
+    &:before
+      display: none !important
+  &:hover
+    background: linear-gradient(270deg, #7F54A0 0%, #176AB2 100%) !important
+    & .fc-icon-chevron-right
+      @include inline($right-blue-arrow-h)
+.arrow
+  &-left
+    height: 40px
+    width: 40px
+    margin-right: 25px
+    padding: 11px 16px 11px 15px
+    transition: .3ms
+    border-radius: 20px 20px 0 20px
+    &-blue
+      @include inline($left-blue-arrow)
+    &:hover
+      background: linear-gradient(270deg, #7F54A0 0%, #176AB2 100%)
+      & .arrow-left-blue
+        @include inline($left-blue-arrow-h)
+  &-right
+    height: 40px
+    width: 40px
+    margin-left: 25px
+    padding: 11px 15px 11px 16px
+    transition: all .3ms
+    border-radius: 20px 20px 20px 0
+    &-blue
+      @include inline($right-blue-arrow)
+    &:hover
+      background: linear-gradient(270deg, #7F54A0 0%, #176AB2 100%)
+      & .arrow-right-blue
+        @include inline($right-blue-arrow-h)
+.fc-toolbar-title
+  text-align: center !important
+  font-size: 16px !important
+  line-height: 22px !important
+  font-family: $HelveticaNeueCyrRoman !important
+
+.q-status-panel
+  font-size: 14px
+  line-height: 20px
+  color: #8C8C8C
+  padding-left: 15px
+  &s
+    position: relative
+
+  &.course
+    position: relative
+    &:before
+      content: ""
+      display: block
+      position: absolute
+      top: 5px
+      left: 0
+      width: 8px
+      height: 8px
+      border-radius: 50%
+      background: linear-gradient(270deg, #7C4394 0%, #DB2431 100%)
+  &.material
+    position: relative
+    &:before
+      content: ""
+      display: block
+      position: absolute
+      top: 5px
+      left: 0
+      width: 8px
+      height: 8px
+      border-radius: 50%
+      background: linear-gradient(270deg, #165B9C 0%, #55BB9A 100%)
+  &.test
+    position: relative
+    &:before
+      content: ""
+      display: block
+      position: absolute
+      top: 5px
+      left: 0
+      width: 8px
+      height: 8px
+      border-radius: 50%
+      background: linear-gradient(270deg, #1D577C 0%, #FCD499 100%)
+  &.event
+    position: relative
+    &:before
+      content: ""
+      display: block
+      position: absolute
+      top: 5px
+      left: 0
+      width: 8px
+      height: 8px
+      border-radius: 50%
+      background: linear-gradient(270deg, #A6CF66 0%, #56A947 100%)
+

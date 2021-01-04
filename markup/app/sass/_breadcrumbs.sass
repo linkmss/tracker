@@ -1,0 +1,25 @@
+.q-breadcrumbs
+    display: flex
+    align-items: center
+    margin-bottom: 20px
+    &__item 
+        position: relative
+        padding-right: 23px
+        font-size: 12px
+        line-height: 18px
+        color: $gray-2
+        &::after
+            content: ''
+            position: absolute
+            right: 10px
+            top: 0
+            bottom: 0
+            margin: auto
+            @include inline($arrow-right)
+            background-position: center center
+            background-size: contain
+            background-repeat: no-repeat
+        &:last-child
+            padding-right: 0
+            &::after
+                display: none

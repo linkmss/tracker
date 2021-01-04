@@ -1,0 +1,131 @@
+.q-input
+  display: inline-block
+  position: relative
+
+  &.selector
+    position: relative
+
+  & input
+    border: none
+    background: transparent
+    outline: none
+    width: 100%
+    padding: 21px 15px 22px
+    font-size: 16px
+    line-height: 24px
+    color: $white
+    transition: all .3s
+    background: $inputBG
+
+    &.disabled,
+    &[disabled]
+      background: transparentize($white, .9) !important
+      color: $gray-1
+
+    &:hover
+      background: $inputHoverBG
+
+  &.active
+    & .q-input_label
+      top: 10px
+      left: 15px
+      color: $inputLabelColor
+      font-size: 12px
+      line-height: 18px
+    & input
+      padding-bottom: 10px
+      padding-top: 33px
+
+  &_label
+    position: absolute
+    transition: .3s
+    top: 21px
+    left: 15px
+    color: $white
+    &.disabled
+      color: $gray-1
+
+
+.q-input_search
+  position: relative
+  &.white 
+    & input 
+      background: transparentize($white, .80)
+      color: $white
+      &::placeholder 
+        color: $white
+      &:hover
+        background: transparentize($white, .70)
+
+  & input
+    border: none
+    position: relative
+    background: transparent
+    outline: none
+    width: 100%
+    padding: 20px 20px 20px 49px
+    font-size: 16px
+    line-height: 24px
+    color: $black
+    transition: all .3s
+    background: $white
+    box-shadow: unset
+    &:hover
+      background: transparentize($white, .25)
+    @media #{$breakpoint-xs-only}
+      padding: 12px 12px 12px 49px
+      margin-bottom: 15px
+
+.q-datepicker
+  position: absolute
+  @include inline($datepicker)
+  top: 25px
+  right: 15px
+  cursor: pointer
+
+.q-input-selector
+  &__content
+    position: absolute
+    display: none
+    top: 68px
+    right: 0
+    background: $white
+    min-width: 97px
+    width: 100%
+    box-shadow: 0 2px 10px rgba(54, 110, 165, 0.2)
+    z-index: 1
+    &.select
+      display: block
+  &__item
+    transition: all .3s
+    &:hover
+      background: $c4
+    & input
+      clip: rect(0, 0, 0, 0)
+      position: absolute
+      top: 0
+      left: 0
+      &:checked
+        & + label
+          color: $black
+          &:before
+            display: block
+    & label
+      position: relative
+      width: 100%
+      display: block
+      padding: 15px 35px 15px 55px
+      font-size: 16px
+      line-height: 24px
+      color: $blue
+      cursor: pointer
+
+      &:before
+        content: ''
+        @include inline($tick)
+        display: none
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 25px
+        margin: auto 0

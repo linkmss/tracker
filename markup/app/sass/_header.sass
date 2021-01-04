@@ -1,0 +1,170 @@
+.header 
+    &.active
+        & .q-lang-selector
+            &__title
+                color: $white
+            &__arrow
+                @include inline($arrow)
+        & .header-button
+            // margin-right: 9px
+            & .q-icon.menu
+                @include inline($close-menu)
+        & .header-logo
+            & .q-icon.black-logo
+                @include inline($logo)
+
+    &-info
+        position: relative
+        display: flex
+        align-items: center
+        margin-left: 50px
+        @media #{$breakpoint-xs-only}
+            margin-left: 0
+    &-logo
+        position: relative
+        margin-right: 30px
+    &-button
+        display: none
+        position: relative
+        // z-index: 100000
+        cursor: pointer
+        width: 36px
+        height: 26px
+        @media #{$breakpoint-xs-only}
+            display: block
+    &-menu
+        display: flex
+        align-items: center
+        justify-content: start
+        flex-wrap: wrap
+        @media #{$breakpoint-xs-only}
+            max-width: 450px
+            display: none
+            margin-top: 0
+            position: fixed
+            // z-index: 9999
+            top: 0
+            bottom: 0
+            right: 0
+            left: 0
+            margin: 0 auto
+            padding: 130px 15px 25px 15px
+            &::before
+                content: ''
+                position: fixed
+                z-index: -1
+                top: 0
+                bottom: 0
+                right: 0
+                left: 0
+                width: 100%
+                height: 100%
+                background: linear-gradient(270deg, #55BB9A 0%, #165B9C 100%);
+    &-links
+        display: flex
+        flex-wrap: wrap
+        @media #{$breakpoint-xs-only}
+            flex-direction: column
+            padding-top: 60px
+        
+    &-link
+        text-decoration: none
+        color: $black
+        margin-right: 18px
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 8px
+        @media #{$breakpoint-xs-only}
+            color: $white
+            margin-bottom: 25px
+            font-size: 20px;
+            line-height: 30px;
+            &:last-child
+                margin-bottom: 0
+            &:last-child
+                margin-right: 0
+        &:visited
+            color: $black
+
+    &-logout
+        align-self: start
+        width: 40px
+        height: 40px
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 7px 8px 9px 8px
+        background: transparentize(#366EA5, .9);
+        border-radius: 0 20px 20px 20px;
+        cursor: pointer
+        @media #{$breakpoint-xs-only}
+            background: transparentize($white, .8);
+            & .q-icon.logout
+                @include inline($logout-white)
+    &-person
+        position: relative
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        cursor: pointer
+        max-width: 270px
+        // overflow: hidden
+        padding: 8px 15px 8px 50px
+        border: 2px solid transparentize(#366EA5, .9);
+        box-sizing: border-box;
+        border-radius: 20px 0px;
+        font-size: 14px;
+        line-height: 20px;
+        @media #{$breakpoint-xs-only}
+            max-width: none
+            background: $white
+        & .name
+            font-size: 14px;
+            line-height: 20px;
+            color: #8C8C8C;
+            flex-basis: 100%
+        & .photo 
+            position: absolute
+            z-index: 1
+            top: -1px
+            bottom: 0
+            left: -1px
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 40px
+            height: 39px
+            background-position: center center
+            background-repeat: no-repeat
+            background-size: cover
+            border-radius: 20px 0px 20px 0px;
+        & .initials 
+            position: absolute
+            z-index: 0
+            top: 0
+            bottom: 0
+            left: 0
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 40px
+            height: 100%
+            padding: 10px 8px 10px 8px
+            color: #366EA5;
+            background: transparentize(#366EA5, .9);
+            border-radius: 18px 0px 20px 0px;
+        & .text
+            margin-right: 5px
+        & .count
+            position: relative
+            display: flex
+            align-items: center
+            justify-content: center
+            color: #B33052
+            &::after
+                content: ''
+                display: block
+                width: 20px !important
+                height: 20px !important
+                background-size: contain
+                @include inline($fire)

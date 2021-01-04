@@ -1,0 +1,23 @@
+.q-checkbox
+    display: block
+    position: relative
+    & input 
+        position: absolute
+        clip: rect(0, 0, 0, 0)
+        &:checked
+            &~label
+                background: transparentize($white, .80)
+                border-color: transparent 
+    & label 
+        display: inline-block
+        padding: 8px 12px
+        color: $white
+        font-size: 14px
+        line-height: 20px
+        border: 2px solid transparentize($white, .88)
+        cursor: pointer
+        transition: all .2s
+        text-align: center
+        &:hover
+            border: 2px solid transparentize($white, .50)
+            
