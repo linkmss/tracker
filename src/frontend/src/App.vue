@@ -1,15 +1,11 @@
 <template>
     <div>
-        123113
+        123
     </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+    name: 'App'
 }
 </script>
-
-<style lang="css" scoped>
-
-</style>>
