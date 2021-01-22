@@ -7,12 +7,24 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-   @@include('template/bar.html')
-
+    @@include('template/bar.html')
+    
    <div class="container">
        <div class="row">
            <div class="col">
                 @@include("template/header.html")
+           </div>
+       </div>
+
+       <div class="row">
+           <div class="col">
+               @@include('template/week.html')
+           </div>
+       </div>
+
+       <div class="row">
+           <div class="col">
+               @@include('template/progress-circle.html')
            </div>
        </div>
    </div>
